@@ -1,0 +1,200 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Text Sharing</title>
+    <style>
+      .textarea{
+        background: #dddddd;
+        color: #666666;
+        padding:1em;
+        border-radius:10px;
+        border:2px solid transparent;
+        outline: none;
+        height:40%;
+        width: 90%;
+        text-align: left;
+        left: 50%;
+        top:40%;
+        font-size: 200%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+      }
+      #Name_field{
+        background: #dddddd;
+        color: #666666;
+        padding:1em;
+        border-radius:10px;
+        border:2px solid transparent;
+        outline: none;
+        height:4%;
+        width: 90%;
+        text-align: left;
+        left: 50%;
+        top:75%;
+        font-size: 200%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+      }
+      #Name_desc{
+        top:65%;
+        left: 4%;
+        color: white;
+        position: absolute;
+        font-size: 200%;
+      }
+      #Password_field{
+        background: #dddddd;
+        color: #666666;
+        padding:1em;
+        border-radius:10px;
+        border:2px solid transparent;
+        outline: none;
+        height:4%;
+        width: 90%;
+        text-align: left;
+        left: 50%;
+        top:93%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        font-size:200% ;
+
+      }
+      #Password_desc{
+        top:82.5%;
+        left: 4%;
+        color: white;
+        position: absolute;
+        font-size: 200%;
+      }
+      #Text_desc{
+        top:13.5%;
+        left: 4%;
+        color: white;
+        position: absolute;
+        z-index: -1;
+        font-size: 200%;
+      }
+      body{
+        background-color: #333333;
+       
+      }
+      #Title{
+        color:white;
+        left: 50%;
+        top:7.5%;
+        font-size: 500%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        z-index: -1;
+      }
+      #search{
+        padding: 1px 6px;
+        border: none;
+        border-radius: 4px;
+        color: white;
+        background-color: grey;
+        left:9%;
+        top:5%;
+        position: absolute;
+        text-decoration: none;
+        transition-duration: 0.4s;
+        z-index: -1;
+        font-size: 400%;
+      }
+      #search:hover {
+        background-color: #04AA6D; /* Green */
+        color: white;
+        border-radius: 8px;
+      }
+      #submit_btn{
+        padding: 1px 6px;
+        border: none;
+        border-radius: 23px;
+        color: white;
+        background-color: grey;
+        left:4%;
+        top:102%;
+        width: 30%;
+        height: 10%;
+        position: absolute;
+        text-decoration: none;
+        transition-duration: 0.4s;
+        font-size: 300%;
+
+      }
+      #submit_btn:hover{
+        background-color: #04AA6D;
+        border-radius: 40px;
+      }
+      #my{
+        zoom: 400%;
+      }
+      .alert {
+        padding: 20px;
+        background-color: #f44336; 
+        color: white;
+        margin-bottom: 15px;
+      }
+
+      .closebtn {
+        margin-left: 15px;
+        color: white;
+        font-weight: bold;
+        float: right;
+        font-size: 200%;
+        line-height: 50%;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .closebtn:hover {
+        color: black;
+      }
+      #notification {
+        display: none; /* Initially hidden */
+        padding: 10px;
+        background-color: #4CAF50; /* Green background */
+        color: white;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        text-align: center;
+        z-index: 1000; /* Make sure it appears above other content */
+      }
+    </style>
+  </head>
+  <body>
+    
+    <a id = "Title">Text Sharing Website</a>
+    <a href = "search/?shared_text=" target = _self title="Help" id = "search">
+      Search
+    </a>
+    <form action="submit.php" method="POST">
+      
+      <div>
+        <label id = "Text_desc">Text:</label>
+        <textarea name="shared_text" class = "textarea" required placeholder = "Enter the text you want to share"></textarea>
+      </div>
+      <div>
+        <label for = "Name" id = "Name_desc">Name:</label>
+        
+        <textarea name="name" id = "Name_field" required placeholder = "The name people will enter to search your text"></textarea>
+        
+      </div>
+      <div>
+        <label for = "Psw" id = "Password_desc">Password(Optional):</label>
+        <textarea name="password" id = "Password_field" placeholder = "Password to protecet your text, leave it blank if you want it to be passwordless"></textarea>
+      </div>
+      <div>
+        <input type="submit" value="Submit" id = "submit_btn">
+      </div>
+    </form>
+    <div id="notification"></div>
+    <script>
+      
+    </script>
+  </body>
+</html>
